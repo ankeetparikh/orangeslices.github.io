@@ -2,7 +2,7 @@ window.onload = function(){
 var w1 = document.getElementById("first");
 var w2 = document.getElementById("second");
 var w3 = document.getElementById("third");
-
+var mark = document.getElementById("correctness");
 
 var questionList = new Array(); //Array of Questions
 var used = new Array();
@@ -131,10 +131,14 @@ var Play = function()
 	if(w2.value == curr.answer)
 	{
 		
-		
+		mark.innerHTML = "Correct!";
 		curr = nextQuestion();
 		Set(curr);
 		
+	}
+	else
+	{
+		mark.innerHTML = "Incorrect";	
 	}
 }
 var button = document.getElementById("submission").addEventListener("click", Play, true);

@@ -2,17 +2,60 @@
 <html>
 	<head>
 		<title>Linkage </title>
+		<style>
+		h1
+		{
+			margin-left: 46%;
+		}
+		#correctness
+		{
+			margin-left: 5%;
+		}
+		p
+		{
+			font-family: Georgia 20px;
+			postition: absolute;
+			text-align: center;
+		}
 		
+		input
+		{
+			text-align: center;
+			width: 10%;
+			display: inline-block;
+			margin-left: 45%;
+			
+		}
+		button
+		{
+			text-align: center;
+			height: 100%; width: 10%;
+			display: inline-block;
+			
+		}
+		</style>
 		<script src = "TWG.js"></script>
 	</head>
 	
 	<body>
-	
+		<h1 id = "Title">
+			Linkage
+		</h1>
+		<h3 id = "instruction">
+			Linkage is based off common phrases and compound words in the English language.
+			You are given a word, a blank and another word. The task is to find a word
+			that fits into the blank such that the first two words form a phrase, and the 
+			second two words form a phrase. For example, bengal ______ shark gives an answer of "tiger"
+			because bengal tiger and tiger shark are commonly heard phrases in English. (All answers are in 
+			lowercase).
+		</h3>
+		
 		<p id = "first"></p>
+		
 		<input type="text" id = "second"></input> 
 		<button id = "submission">Submit</button>
 		<p id = "third"></p>
-		
+		<p id = "correctness"></p>
 		
 		
 	</body>
