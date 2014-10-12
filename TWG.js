@@ -13,7 +13,8 @@ var Question = function(first, second, third)
 
 
 //read in the csv file
-
+var
+var file = document.getElementById('txtFileUpload').files[0];
 
 //game functions
 
