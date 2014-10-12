@@ -13,9 +13,8 @@ var Question = function(first, second, third)
 
 
 //read in the csv file
-questionList.push(new Question('bengal','tiger', 'shark'));
-questionList.push(new Question('couch','potato', 'chip'));
-questionList.push(new Question('car', 'show', 'business'));
+
+
 //game functions
 
 
@@ -29,14 +28,16 @@ var Set = function(ques)
 
 var nextQuestion = function()
 {
+	w2.value ="";
+	var i = Math.floor(Math.random()*questionList.length);
+	var question = questionList.splice(i,1); //splice returns an array
+	used.push(question[0]);
 	if(questionList.length == 0)
 	{
 		questionList = used;
 		used = new Array();
 	}
-	var i = Math.floor(Math.random()*questionList.length);
-	var question = questionList.splice(i,1); //splice returns an array
-	used.push(question);
+	//console.log("Used:" + used.length)
 	return question.pop(); //get last element of the array
 }
 
@@ -47,8 +48,8 @@ var Play = function()
 {
 	if(w2.value == curr.answer)
 	{
-		console.log("hello");
-		console.log(questionList);
+		
+		//console.log("QList:" +questionList.length);
 		curr = nextQuestion();
 		Set(curr);
 	}
