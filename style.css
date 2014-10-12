@@ -1,0 +1,21 @@
+p {
+    font-family: "Georgia";
+    font-size: 50px;
+    text-align: center;
+}
+.center {
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
+}
+input {
+    text-align: center;
+    font-size: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+}
+button {
+    margin-left: auto;
+    margin-right: auto;
+}
