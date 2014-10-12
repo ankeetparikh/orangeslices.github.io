@@ -4,6 +4,7 @@ p {
     text-align: center;
 }
 .center {
+    object-align: center;
     margin-left: auto;
     margin-right: auto;
     width: 20%;
