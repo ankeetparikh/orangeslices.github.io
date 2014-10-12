@@ -1,6 +1,7 @@
 var w1 = document.getElementById('w1');
-var w2 = document.getElementById('second');
+var w2 = document.getElementById('w2');
 var w3 = document.getElementById('w3');
+
 var questionList = new Array(); //Array of Questions
 var used = new Array();
 
@@ -13,8 +14,29 @@ var Question = function(first, second, third)
 
 
 //read in the csv file
-var
-var file = document.getElementById('txtFileUpload').files[0];
+var list = ["lamp,post,mark",
+"artificial,intelligence,quotient",
+"car,show,business",
+"bengal,tiger,shark",
+"space,ship,wreck",
+"cow,bell,hop",
+"going,bald,eagle",
+"special,order,up",
+"money,ball,pit",
+"muscle,milk,shake",
+"micro,soft,ware",
+"water,bottle,neck",
+"green,apple,computer",
+"couch,potato,chip",
+"pack,rat,race",
+"optimus,prime,rib",
+"subatomic,particle,physics"];
+
+for(var i =0; i<=list.length-1; i++)
+{
+	var words = list[i].split(",");
+	questionList.push(new Question(words[0],words[1],words[2]));
+}
 
 //game functions
 
@@ -29,7 +51,7 @@ var Set = function(ques)
 
 var nextQuestion = function()
 {
-	w2.value ="";
+	w2.value = " ";
 	var i = Math.floor(Math.random()*questionList.length);
 	var question = questionList.splice(i,1); //splice returns an array
 	used.push(question[0]);
