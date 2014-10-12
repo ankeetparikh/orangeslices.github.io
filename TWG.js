@@ -13,8 +13,7 @@ var Question = function(first, second, third)
 
 
 //read in the csv file
-var file = "TWGQuestions.csv";
-var reader = new FileReader();
+
 
 //game functions
 
