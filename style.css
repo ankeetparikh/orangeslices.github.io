@@ -4,7 +4,7 @@ p {
     text-align: center;
 }
 .center {
-    margin-left: -35%;
+    margin-left: auto;
     margin-right: auto;
     width: 20%;
 }
