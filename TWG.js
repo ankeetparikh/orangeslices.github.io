@@ -1,6 +1,8 @@
-var w1 = document.getElementById('w1');
-var w2 = document.getElementById('w2');
-var w3 = document.getElementById('w3');
+window.onload = function(){
+var w1 = document.getElementById("first");
+var w2 = document.getElementById("second");
+var w3 = document.getElementById("third");
+
 
 var questionList = new Array(); //Array of Questions
 var used = new Array();
@@ -13,7 +15,7 @@ var Question = function(first, second, third)
 }
 
 
-//read in the csv file
+
 var list = ["lamp,post,mark",
 "artificial,intelligence,quotient",
 "car,show,business",
@@ -30,9 +32,62 @@ var list = ["lamp,post,mark",
 "couch,potato,chip",
 "pack,rat,race",
 "optimus,prime,rib",
-"subatomic,particle,physics"];
+"subatomic,particle,physics", 
+"movie ,marathon,runner",
+"break ,time,management",
+"deep,space,craft",
+"motor,oil,painting",
+"broken,heart,surgery",
+"wheel of ,fortune,cookie",
+"forest,fire,hazard",
+"fire,alarm,clock",
+"anger,management,position",
+"assembly,line,dancing",
+"snow,crab,cake",
+"pilot,light,fixture",
+"corn,oil,lamp",
+"gene,pool,party",
+"mountain,range,rover",
+"snow,ball,room",
+"lap,top,hat",
+"ice,crystal,meth",
+"flammable,substance,abuse",
+"time,travel,agent",
+"bed,room,service",
+"iced,tea,party",
+"force,field,commander",
+"pink,eye,brow",
+"dragon,fruit,punch",
+"advertising,campaign,manager",
+"basket,ball,boy",
+"taco,bell,boy",
+"taylor,swift,key",
+"snap,back,pack",
+"thigh,gap,year",
+"smart,watch,tower",
+"grid,iron,man",
+"iron,man,made",
+"space,bar,bell",
+"key,board,game",
+"sun,dial,tone",
+"shower,head,ache",
+"photo,copy,cat",
+"power,point,blank",
+"camera,man,hunt",
+"beat,boxer,rebellion",
+"ball,game,board",
+"first,kiss,cam",
+"black,ice,cream",
+"flappy,bird,watching",
+"soda,pop,corn",
+"juice,box,tops",
+"eye,glass,slippers",
+"bird,bath,room",
+"face,book,shelf",
+"flat,stanley,cup",
+"heavy,weight,watchers"];
 
-for(var i =0; i<=list.length-1; i++)
+for(var i =0; i < list.length1; i++)
 {
 	var words = list[i].split(",");
 	questionList.push(new Question(words[0],words[1],words[2]));
@@ -45,13 +100,14 @@ for(var i =0; i<=list.length-1; i++)
 
 var Set = function(ques)
 {
+	
 	w1.innerHTML = ques.first;
 	w3.innerHTML = ques.third;
 }
 
 var nextQuestion = function()
 {
-	w2.value = " ";
+	w2.value = "";
 	var i = Math.floor(Math.random()*questionList.length);
 	var question = questionList.splice(i,1); //splice returns an array
 	used.push(question[0]);
@@ -60,8 +116,8 @@ var nextQuestion = function()
 		questionList = used;
 		used = new Array();
 	}
-	//console.log("Used:" + used.length)
-	return question.pop(); //get last element of the array
+	
+	return question[0]; //get last element of the array
 }
 
 var curr = nextQuestion();
@@ -72,9 +128,10 @@ var Play = function()
 	if(w2.value == curr.answer)
 	{
 		
-		//console.log("QList:" +questionList.length);
+		
 		curr = nextQuestion();
 		Set(curr);
 	}
 }
 
+};
