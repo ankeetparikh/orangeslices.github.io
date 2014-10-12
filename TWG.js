@@ -87,7 +87,7 @@ var list = ["lamp,post,mark",
 "flat,stanley,cup",
 "heavy,weight,watchers"];
 
-for(var i =0; i < list.length1; i++)
+for(var i =0; i < list.length; i++)
 {
 	var words = list[i].split(",");
 	questionList.push(new Question(words[0],words[1],words[2]));
@@ -110,28 +110,33 @@ var nextQuestion = function()
 	w2.value = "";
 	var i = Math.floor(Math.random()*questionList.length);
 	var question = questionList.splice(i,1); //splice returns an array
-	used.push(question[0]);
+	
+	question = question[0];
+	used.push(question);
 	if(questionList.length == 0)
 	{
 		questionList = used;
 		used = new Array();
 	}
 	
-	return question[0]; //get last element of the array
+	return question; //get last element of the array
 }
 
 var curr = nextQuestion();
 Set(curr);
 
 var Play = function()
-{
+{	
+	
 	if(w2.value == curr.answer)
 	{
 		
 		
 		curr = nextQuestion();
 		Set(curr);
+		
 	}
 }
+var button = document.getElementById("submission").addEventListener("click", Play, true);
 
 };
