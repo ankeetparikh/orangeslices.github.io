@@ -29,7 +29,7 @@ var Set = function(ques)
 
 var nextQuestion = function()
 {
-	
+	w2.value ="";
 	var i = Math.floor(Math.random()*questionList.length);
 	var question = questionList.splice(i,1); //splice returns an array
 	used.push(question[0]);
