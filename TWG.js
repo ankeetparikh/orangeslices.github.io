@@ -1,8 +1,8 @@
 var w1 = document.getElementById('w1');
 var w2 = document.getElementById('second');
 var w3 = document.getElementById('w3');
-
-
+var questionList = new Array(); //Array of Questions
+var used = new Array();
 
 var Question = function(first, second, third)
 {
@@ -11,10 +11,20 @@ var Question = function(first, second, third)
 	this.third = third;
 }
 
-var questionList = new Array(); //Array of Questions
-var used = new Array();
 
+//read in the csv file
 questionList.push(new Question('bengal','tiger', 'shark'));
+
+//game functions
+
+
+
+
+var Set = function(ques)
+{
+	w1.innerHTML = ques.first;
+	w3.innerHTML = ques.third;
+}
 
 var nextQuestion = function()
 {
@@ -24,9 +34,16 @@ var nextQuestion = function()
 	return question;
 }
 
-var reset = function()
+var curr = nextQuestion();
+console.log(curr);
+Set(curr);
+
+var Play = function()
 {
-	var next = nextQuestion();
-	w1.innerHTML = next.first;
-	w3.innerHTML = next.third;
+	if(w2.value == curr.answer)
+	{
+		curr = nextQuestion();
+		Set(curr);
+	}
 }
+
