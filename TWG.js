@@ -13,9 +13,10 @@ var Question = function(first, second, third)
 
 
 //read in the csv file
-questionList.push(new Question('bengal','tiger', 'shark'));
-questionList.push(new Question('couch','potato', 'chip'));
-questionList.push(new Question('car', 'show', 'business'));
+var file = "Triple\ Word\ Game\ -\ \Sheet1\.csv";
+var reader = new FileReader();
+var content = reader.readAsText(file);
+console.log(content);
 //game functions
 
 
