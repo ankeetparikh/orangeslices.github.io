@@ -19,4 +19,3 @@ var nextQuestion = function()
 
 w1.innerHTML = questionList[0].first;
 w3.innerHTML = questionList[0].third;
-console.log(questionList[0].third);
