@@ -13,10 +13,9 @@ var Question = function(first, second, third)
 
 
 //read in the csv file
-var file = "Triple\ Word\ Game\ -\ \Sheet1\.csv";
+var file = "TWGQuestions.csv";
 var reader = new FileReader();
-var content = reader.readAsText(file);
-console.log(content);
+
 //game functions
 
 
